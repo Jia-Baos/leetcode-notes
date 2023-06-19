@@ -18,67 +18,67 @@
    2. 每天平均花费时间 1 ~ 3 小时不等，根据个人学习接受能力强弱有所浮动。
    3. 项目总计 7 个学习周期，共 103 天学习任务。
 3. 学习建议：
-   1. 从未刷过算法题目的同学，推荐先看下 [「01.01.03 LeetCode 入门及攻略（第 01 ~ 02 天）」](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.01/01.01.03%20LeetCode-Guide.md) 相关内容。
+   1. 从未刷过算法题目的同学，推荐先看下 [「01.01.03 LeetCode 入门及攻略（第 01 ~ 02 天）」](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.01/01.01.03%20LeetCode-Guide.md) 相关内容。
    2. 推荐按照项目中制定的学习周期进行算法学习。
    3. 可在看完每日的学习内容之后，选择每日对应的练习题目进行巩固练习。
    4. 做完每日练习题目之后，如有余力，可通过相关专题下的题目清单进行拓展练习。
 
 ## 章节目录
 
-### [01. 算法入门与数组篇（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/index.md)
+### [01. 算法入门与数组篇（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/index.md)
 
-- [01.01 数据结构与算法简介、LeetCode 入门及攻略（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.01/index.md)
-- [01.02 数组基础（第 03 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.02/index.md)
-- [01.03 数组排序（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.03/index.md)
-- [01.04 数组二分查找（第 09 ~ 11 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.04/index.md)
-- [01.05 数组双指针、滑动窗口（第 12 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch01/01.05/index.md)
+- [01.01 数据结构与算法简介、LeetCode 入门及攻略（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.01/index.md)
+- [01.02 数组基础（第 03 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.02/index.md)
+- [01.03 数组排序（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.03/index.md)
+- [01.04 数组二分查找（第 09 ~ 11 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.04/index.md)
+- [01.05 数组双指针、滑动窗口（第 12 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch01/01.05/index.md)
 
-### [02. 基础数据结构篇（上）：链表、堆栈、队列（共 15 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/index.md)
+### [02. 基础数据结构篇（上）：链表、堆栈、队列（共 15 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/index.md)
 
-- [02.01 链表（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.01/index.md)
-- [02.02 堆栈与单调栈（第 05 ~ 07 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.02/index.md)
-- [02.03 深度优先搜索（第 08 ~ 10 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.03/index.md)
-- [02.04 队列与优先队列（第 11 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.04/index.md)
-- [02.05 广度优先搜索（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.05/index.md)
-- [02.06 拓扑排序（第 15 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch02/02.06/index.md)
+- [02.01 链表（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.01/index.md)
+- [02.02 堆栈与单调栈（第 05 ~ 07 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.02/index.md)
+- [02.03 深度优先搜索（第 08 ~ 10 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.03/index.md)
+- [02.04 队列与优先队列（第 11 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.04/index.md)
+- [02.05 广度优先搜索（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.05/index.md)
+- [02.06 拓扑排序（第 15 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch02/02.06/index.md)
 
-### [03. 基础数据结构篇（下）：哈希表、字符串、二叉树、并查集（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/index.md)
+### [03. 基础数据结构篇（下）：哈希表、字符串、二叉树、并查集（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/index.md)
 
-- [03.01 哈希表（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/03.01/index.md)
-- [03.02 字符串与字符串匹配（ 第 03 ~ 07 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/03.02/index.md)
-- [03.03 二叉树（第 08 ~ 10 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/03.03/index.md)
-- [03.04 二叉搜索树（第 11 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/03.04/index.md)
-- [03.05 并查集（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch03/03.05/index.md)
+- [03.01 哈希表（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/03.01/index.md)
+- [03.02 字符串与字符串匹配（ 第 03 ~ 07 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/03.02/index.md)
+- [03.03 二叉树（第 08 ~ 10 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/03.03/index.md)
+- [03.04 二叉搜索树（第 11 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/03.04/index.md)
+- [03.05 并查集（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch03/03.05/index.md)
 
-### [04. 基础算法篇：枚举、递归、分治、回溯、贪心、位运算（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/index.md)
+### [04. 基础算法篇：枚举、递归、分治、回溯、贪心、位运算（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/index.md)
 
-- [04.01 枚举算法（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/04.01/index.md)
-- [04.02 递归算法与分治算法（第 03 ~ 06 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/04.02/index.md)
-- [04.03 回溯算法（第 07 ~ 09 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/04.03/index.md)
-- [04.04 贪心算法（第 10 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/04.04/index.md)
-- [04.05 位运算（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch04/04.05/index.md)
+- [04.01 枚举算法（第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/04.01/index.md)
+- [04.02 递归算法与分治算法（第 03 ~ 06 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/04.02/index.md)
+- [04.03 回溯算法（第 07 ~ 09 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/04.03/index.md)
+- [04.04 贪心算法（第 10 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/04.04/index.md)
+- [04.05 位运算（第 13 ~ 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch04/04.05/index.md)
 
-### [05. 动态规划篇（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch05/index.md)
+### [05. 动态规划篇（共 14 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch05/index.md)
 
-- [05.01 动态规划基础、记忆化搜索（ 第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch05/05.01/index.md)
-- [05.02 线性动态规划（第 03 ~ 06 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch05/05.02/index.md)
-- [05.03 背包问题（第 07 ~ 09 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch05/05.03/index.md)
-- [05.04 区间 DP 和 树形 DP（第 10 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch05/05.04/index.md)
+- [05.01 动态规划基础、记忆化搜索（ 第 01 ~ 02 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch05/05.01/index.md)
+- [05.02 线性动态规划（第 03 ~ 06 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch05/05.02/index.md)
+- [05.03 背包问题（第 07 ~ 09 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch05/05.03/index.md)
+- [05.04 区间 DP 和 树形 DP（第 10 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch05/05.04/index.md)
 - 05.05 其他 DP 问题（第 13 ~ 14 天）
 
-### [06. 面试篇（上）（共 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch06/index.md)
+### [06. 面试篇（上）（共 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch06/index.md)
 
-- [06.01 第 001 ~ 012 题（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch06/06.01/index.md)
-- [06.02 第 013 ~ 025 题（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch06/06.02/index.md)
-- [06.03 第 026 ~ 037 题（第 09 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch06/06.03/index.md)
-- [06.04 第 038 ~ 050 题（第 13 ~ 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch06/06.04/index.md)
+- [06.01 第 001 ~ 012 题（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch06/06.01/index.md)
+- [06.02 第 013 ~ 025 题（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch06/06.02/index.md)
+- [06.03 第 026 ~ 037 题（第 09 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch06/06.03/index.md)
+- [06.04 第 038 ~ 050 题（第 13 ~ 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch06/06.04/index.md)
 
-### [07. 面试篇（下）（共 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch07/index.md)
+### [07. 面试篇（下）（共 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch07/index.md)
 
-- [07.01 第 051 ~ 062 题（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch07/07.01/index.md)
-- [07.02 第 063 ~ 074 题（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch07/07.02/index.md)
-- [07.03 第 075 ~ 087 题（第 09 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch07/07.03/index.md)
-- [07.04 第 088 ~ 100 题（第 13 ~ 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/main/docs/ch07/07.04/index.md)
+- [07.01 第 051 ~ 062 题（第 01 ~ 04 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch07/07.01/index.md)
+- [07.02 第 063 ~ 074 题（第 05 ~ 08 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch07/07.02/index.md)
+- [07.03 第 075 ~ 087 题（第 09 ~ 12 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch07/07.03/index.md)
+- [07.04 第 088 ~ 100 题（第 13 ~ 16 天）](https://github.com/Jia-Baos/leetcode-notes/blob/master/docs/ch07/07.04/index.md)
 
 ## 贡献者名单
 
