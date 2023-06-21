@@ -2,26 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    std::array<int, 8> arr = {6, 2, 1, 3, 7, 5, 4, 8};
-
-    int gap = arr.size() / 2;
-
-    while (gap > 0)
-    {
-        for (size_t i = gap; i < arr.size(); i++)
-        {
-            int temp = arr[i];
-            int j = i;
-            while (j >= gap && arr[j - gap] > temp)
-            {
-                arr[j] = arr[j - gap];
-                j -= gap;
-            }
-            arr[j] = temp;
-        }
-
-        gap /= 2;
-    }
+    std::array<int, 6> arr = {6, 2, 3, 5, 1, 4};
 
     for (auto &iter : arr)
     {
