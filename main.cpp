@@ -1,49 +1,35 @@
 #include <bits/stdc++.h>
 
-int main(int argc, char *argv[])
+int Solution(const std::array<int, 7> &arr)
 {
-    int k = 3;
-    int t = 0;
-    bool flag = false;
-    std::array<int, 4> arr = {1, 2, 3, 1};
+    int left = 0;
+    int right = arr.size() - 1;
 
-    std::map<int, int> dict;
-    for (size_t i = 0; i < arr.size(); i++)
+    while (left < right)
     {
-        int index = arr[i] / (t + 1);
-
-        // 若目前桶已存在。说明前面已经有 [index - t, index + t]
-        if (dict.find(index) != dict.end())
+        int mid = (left + right) / 2;
+        if (arr[mid] > arr[right])
         {
-            flag = true;
-            break;
+            left = mid + 1;
         }
-
-        // 检查左侧的桶
-        if (dict.find(index - 1) != dict.end() && std::abs(dict[index - 1] - arr[i]) <= t)
+        else
         {
-            flag = true;
-            break;
-        }
-
-        // 检测右侧的桶
-        if (dict.find(index + 1) != dict.end() && std::abs(dict[index + 1] - arr[i]) <= t)
-        {
-            flag = true;
-            break;
-        }
-
-        // 建立目标桶
-        dict.insert({index, arr[i]});
-
-        // 移除下标范围不在[i-k, i]内的桶
-        if (i >= k)
-        {
-            dict.erase(arr[i - k] / (t + 1));
+            right = mid;
         }
     }
 
-    std::cout << flag << std::endl;
+    return arr[left];
+}
+
+int main(int argc, char *argv[])
+
+{
+    int target = 0;
+    std::array<int, 7> arr = {4, 5, 6, 7, 0, 1, 2};
+
+    int pos = Solution(arr);
+
+    std::cout << pos << std::endl;
 
     return 0;
 }
