@@ -1,35 +1,48 @@
 #include <bits/stdc++.h>
 
-int Solution(const std::array<int, 7> &arr)
+int Solution(std::array<int, 4> &arr)
 {
-    int left = 0;
-    int right = arr.size() - 1;
+    int k = 3;
+    int t = 0;
 
-    while (left < right)
+    std::map<int, int> window;
+    int left = 0;
+    int right = 0;
+
+    while (right < arr.size())
     {
-        int mid = (left + right) / 2;
-        if (arr[mid] > arr[right])
+        window.insert({arr[right], right});
+
+        if (right - left > k)
         {
-            left = mid + 1;
+            window.erase(arr[left]);
+            left += 1;
         }
-        else
+
+        int idx = arr[right];
+        if (idx > 0 && std::abs(window[idx] - window[idx - 1]) <= t)
         {
-            right = mid;
+            return 0;
         }
+
+        if (idx < arr.size() - 1 && std::abs(window[idx + 1] - window[idx]) <= t)
+        {
+            return 0;
+        }
+
+        right += 1;
     }
 
-    return arr[left];
+    return -1;
 }
 
 int main(int argc, char *argv[])
-
 {
-    int target = 0;
-    std::array<int, 7> arr = {4, 5, 6, 7, 0, 1, 2};
+    std::array<int, 4> arr = {1, 2, 3, 1};
 
-    int pos = Solution(arr);
+    int dst = Solution(arr);
 
-    std::cout << pos << std::endl;
+    std::cout << "dst: " << dst << std::endl;
 
     return 0;
 }
