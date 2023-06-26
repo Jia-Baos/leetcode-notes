@@ -1,18 +1,35 @@
 #include <bits/stdc++.h>
 
-int main(int argc, char *argv[])
+int Solution(std::vector<int> &vec)
 {
-    std::string str = "Hello";
-
-    for (auto &iter : str)
+    int k = 3;
+    std::vector<int> temp(vec.size(), 0);
+    for (size_t i = 0; i < k; i++)
     {
-        if (std::isupper(iter))
-        {
-            iter = std::tolower(iter);
-        }
+        temp[i] = vec[vec.size() - k + i];
+    }
+    for (size_t i = k; i < vec.size(); i++)
+    {
+        temp[i] = vec[i - k];
     }
 
-    std::cout << str << std::endl;
+    vec = temp;
+
+    return 0;
+}
+
+int main(int argc, char *argv[])
+{
+    std::vector<int> vec = {1, 2, 3, 4, 5, 6, 7};
+
+    int ans = Solution(vec);
+
+    std::cout << "ans: " << ans << std::endl;
+
+    for (auto &iter : vec)
+    {
+        std::cout << iter << std::endl;
+    }
 
     return 0;
 }
