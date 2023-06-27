@@ -2,51 +2,28 @@
 
 int Solution(std::vector<int> &vec)
 {
+    int left = 0;
+    int right = vec.size() - 1;
 
-    int ans = 0;
-
-    if (vec.size() < 2)
+    while (left < right)
     {
-        ans = 0;
-    }
-    if (vec.size() == 2)
-    {
-        ans = std::abs(vec[0] - vec[1]);
-    }
-
-    int max = *std::max_element(vec.begin(), vec.end());
-
-    std::vector<int> counts(max + 1);
-    for (auto &iter : vec)
-    {
-        counts[iter] += 1;
-    }
-
-    int index = 0;
-    for (size_t i = 0; i < counts.size(); i++)
-    {
-        while (counts[i] > 0)
+        int mid = (left + right) / 2;
+        if (vec[mid] > vec[right])
         {
-            vec[index++] = i;
-            counts[i] -= 1;
+            left = mid + 1;
+        }
+        else
+        {
+            right = mid - 1;
         }
     }
 
-    // 对已排序的序列计算相邻两元素的最大差值
-    for (size_t i = 1; i < vec.size(); i++)
-    {
-        if (std::abs(vec[i] - vec[i - 1]) > ans)
-        {
-            ans = std::abs(vec[i] - vec[i - 1]);
-        }
-    }
-
-    return ans;
+    return left;
 }
 
 int main(int argc, char *argv[])
 {
-    std::vector<int> vec = {3, 6, 9, 1};
+    std::vector<int> vec = {4, 5, 6, 7, 0, 1, 2};
 
     int ans = Solution(vec);
 
