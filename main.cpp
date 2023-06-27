@@ -1,37 +1,133 @@
 #include <bits/stdc++.h>
 
-int Solution(std::vector<int> &vec)
+struct ListNode
 {
-    int left = 0;
-    int right = vec.size() - 1;
+    int val_;
+    ListNode *next_;
+    ListNode(int val) : val_(val), next_(nullptr) {}
+};
 
-    while (left < right)
+class MyLinkerList
+{
+public:
+    int size_;
+    ListNode *head_;
+
+public:
+    MyLinkerList()
     {
-        int mid = (left + right) / 2;
-        if (vec[mid] > vec[right])
+        this->size_ = 0;
+        this->head_ = new ListNode(0);
+    }
+
+    int get(int index)
+    {
+        if (index < 0 || index >= this->size_)
         {
-            left = mid + 1;
+            return -1;
+        }
+
+        ListNode *cur = this->head_;
+        for (size_t i = 0; i <= index; i++)
+        {
+            cur = cur->next_;
+        }
+
+        return cur->val_;
+    }
+
+    void addAtHead(int val)
+    {
+        addAtIndex(0, val);
+    }
+
+    void addAtTail(int val)
+    {
+        addAtIndex(this->size_, val);
+    }
+
+    void addAtIndex(int index, int val)
+    {
+        if (index > this->size_)
+        {
+            return;
+        }
+
+        index = std::max(0, index);
+        this->size_ += 1;
+
+        ListNode *pred = this->head_;
+        for (size_t i = 0; i < index; i++)
+        {
+            pred = pred->next_;
+        }
+
+        ListNode *toAdd = new ListNode(val);
+        toAdd->next_ = pred->next_;
+        pred->next_ = toAdd;
+    }
+
+    void deleteAtindex(int index)
+    {
+        if (index < 0 || index >= this->size_)
+        {
+            return;
+        }
+
+        this->size_ -= 1;
+        ListNode *pred = this->head_;
+        for (size_t i = 0; i < index; i++)
+        {
+            pred = pred->next_;
+        }
+
+        ListNode *toDelete = pred->next_;
+        pred->next_ = pred->next_->next_;
+
+        delete toDelete;
+    }
+};
+
+ListNode *removeElements(ListNode *head, int target)
+{
+    ListNode *newhead = head;
+    ListNode *iter = newhead;
+    while (iter->next_ != nullptr)
+    {
+        if (iter->next_->val_ == target)
+        {
+            ListNode *temp = iter->next_;
+            iter->next_ = iter->next_->next_;
+            delete temp;
         }
         else
         {
-            right = mid - 1;
+            iter = iter->next_;
         }
     }
 
-    return left;
+    return newhead;
 }
 
 int main(int argc, char *argv[])
 {
-    std::vector<int> vec = {4, 5, 6, 7, 0, 1, 2};
 
-    int ans = Solution(vec);
+    MyLinkerList *linkerlist = new MyLinkerList();
+    linkerlist->addAtHead(1);
+    linkerlist->addAtTail(2);
+    linkerlist->addAtTail(6);
+    linkerlist->addAtTail(3);
+    linkerlist->addAtTail(4);
+    linkerlist->addAtTail(5);
+    linkerlist->addAtTail(6);
 
-    std::cout << "ans: " << ans << std::endl;
+    ListNode *head = removeElements(linkerlist->head_, 6);
 
-    for (auto &iter : vec)
+    ListNode *iter = head;
+    while (iter)
     {
-        std::cout << iter << std::endl;
+        std::cout << iter->val_ << std::endl;
+        iter = iter->next_;
     }
 
     return 0;
