@@ -1,134 +1,58 @@
 #include <bits/stdc++.h>
 
-struct ListNode
+struct RandomListNode
 {
     int val_;
-    ListNode *next_;
-    ListNode(int val) : val_(val), next_(nullptr) {}
+    RandomListNode *next_;
+    RandomListNode *random_;
+    RandomListNode(int val) : val_(val),
+                              next_(nullptr),
+                              random_(nullptr) {}
 };
 
-class MyLinkerList
+class Solution
 {
 public:
-    int size_;
-    ListNode *head_;
+    std::unordered_map<RandomListNode *, RandomListNode *> cachedNode;
 
-public:
-    MyLinkerList()
+    RandomListNode *copyRandomList(RandomListNode *head)
     {
-        this->size_ = 0;
-        this->head_ = new ListNode(0);
-    }
-
-    int get(int index)
-    {
-        if (index < 0 || index >= this->size_)
+        if (head == nullptr)
         {
-            return -1;
+            return nullptr;
         }
-
-        ListNode *cur = this->head_;
-        for (size_t i = 0; i <= index; i++)
+        if (!cachedNode.count(head))
         {
-            cur = cur->next_;
+            RandomListNode *headNew = new RandomListNode(head->val_);
+            cachedNode[head] = headNew;
+            headNew->next_ = copyRandomList(head->next_);
+            headNew->random_ = copyRandomList(head->random_);
         }
-
-        return cur->val_;
-    }
-
-    void addAtHead(int val)
-    {
-        addAtIndex(0, val);
-    }
-
-    void addAtTail(int val)
-    {
-        addAtIndex(this->size_, val);
-    }
-
-    void addAtIndex(int index, int val)
-    {
-        if (index > this->size_)
-        {
-            return;
-        }
-
-        index = std::max(0, index);
-        this->size_ += 1;
-
-        ListNode *pred = this->head_;
-        for (size_t i = 0; i < index; i++)
-        {
-            pred = pred->next_;
-        }
-
-        ListNode *toAdd = new ListNode(val);
-        toAdd->next_ = pred->next_;
-        pred->next_ = toAdd;
-    }
-
-    void deleteAtindex(int index)
-    {
-        if (index < 0 || index >= this->size_)
-        {
-            return;
-        }
-
-        this->size_ -= 1;
-        ListNode *pred = this->head_;
-        for (size_t i = 0; i < index; i++)
-        {
-            pred = pred->next_;
-        }
-
-        ListNode *toDelete = pred->next_;
-        pred->next_ = pred->next_->next_;
-
-        delete toDelete;
+        return cachedNode[head];
     }
 };
-
-ListNode *removeElements(ListNode *head, int target)
-{
-    ListNode *newhead = head;
-    ListNode *iter = newhead;
-    while (iter->next_ != nullptr)
-    {
-        if (iter->next_->val_ == target)
-        {
-            ListNode *temp = iter->next_;
-            iter->next_ = iter->next_->next_;
-            delete temp;
-        }
-        else
-        {
-            iter = iter->next_;
-        }
-    }
-
-    return newhead;
-}
 
 int main(int argc, char *argv[])
 {
 
-    MyLinkerList *linkerlist = new MyLinkerList();
-    linkerlist->addAtHead(1);
-    linkerlist->addAtTail(2);
-    linkerlist->addAtTail(6);
-    linkerlist->addAtTail(3);
-    linkerlist->addAtTail(4);
-    linkerlist->addAtTail(5);
-    linkerlist->addAtTail(6);
+    RandomListNode *listnode0 = new RandomListNode(7);
+    RandomListNode *listnode1 = new RandomListNode(13);
+    RandomListNode *listnode2 = new RandomListNode(11);
+    RandomListNode *listnode3 = new RandomListNode(10);
+    RandomListNode *listnode4 = new RandomListNode(1);
+    listnode0->next_ = listnode1;
+    listnode0->random_ = nullptr;
+    listnode1->next_ = listnode2;
+    listnode1->random_ = listnode0;
+    listnode2->next_ = listnode3;
+    listnode2->random_ = listnode4;
+    listnode3->next_ = listnode4;
+    listnode3->random_ = listnode2;
+    listnode4->next_ = nullptr;
+    listnode4->random_ = listnode0;
 
-    ListNode *head = removeElements(linkerlist->head_, 6);
-
-    ListNode *iter = head;
-    while (iter)
-    {
-        std::cout << iter->val_ << std::endl;
-        iter = iter->next_;
-    }
+    Solution *solution = new Solution();
+    RandomListNode *listnode = solution->copyRandomList(listnode0);
 
     return 0;
 }
