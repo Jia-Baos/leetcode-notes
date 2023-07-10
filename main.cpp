@@ -1,51 +1,55 @@
 #include <bits/stdc++.h>
 
-struct ListNode
+class MinStack
 {
-    int val_;
-    ListNode *next_;
-    ListNode(int val) : val_(val), next_(nullptr) {}
-};
+private:
+    std::stack<int> val_stack_;
+    std::stack<int> min_stack_;
 
-int Solution(ListNode *head)
-{
-    int flag = 1;
-    std::set<ListNode *> node_set;
-    ListNode *iter = head;
-    while (iter)
+public:
+    MinStack()
     {
-        if (node_set.find(iter) != node_set.end())
-        {
-            flag = 0;
-            break;
-        }
-        else
-        {
-            node_set.insert(iter);
-            iter = iter->next_;
-        }
+        min_stack_.push(INT_MAX);
     }
 
-    std::cout << "The first node's value: " << iter->val_ << std::endl;
+    // 入栈操作
+    void push(int val)
+    {
+        val_stack_.push(val);
+        min_stack_.push(std::min(min_stack_.top(), val));
+    }
 
-    return flag;
-}
+    // 出栈操作
+    void pop()
+    {
+        val_stack_.pop();
+        min_stack_.pop();
+    }
+
+    // 获取栈顶元素
+    int top()
+    {
+        return val_stack_.top();
+    }
+
+    // 获取最小元素
+    int getMin()
+    {
+        return min_stack_.top();
+    }
+};
 
 int main(int argc, char *argv[])
 {
 
-    ListNode *listnode0 = new ListNode(3);
-    ListNode *listnode1 = new ListNode(2);
-    ListNode *listnode2 = new ListNode(0);
-    ListNode *listnode3 = new ListNode(4);
-    listnode0->next_ = listnode1;
-    listnode1->next_ = listnode2;
-    listnode2->next_ = listnode3;
-    listnode3->next_ = listnode1;
-
-    int val = Solution(listnode0);
-
-    std::cout << val << std::endl;
+    MinStack *minStack = new MinStack();
+    minStack->push(-2);
+    minStack->push(0);
+    minStack->push(-3);
+    std::cout << "Val: " << minStack->getMin() << std::endl;
+    minStack->pop();
+    std::cout << "Val: " << minStack->top() << std::endl;
+    std::cout << "Val: " << minStack->getMin() << std::endl;
 
     return 0;
 }
