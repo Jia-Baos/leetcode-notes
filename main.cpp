@@ -1,55 +1,144 @@
 #include <bits/stdc++.h>
 
-class MinStack
+template <typename T>
+class Stack
 {
 private:
-    std::stack<int> val_stack_;
-    std::stack<int> min_stack_;
+    std::vector<T> Stack_;
+    int size_;
+    int top_;
 
 public:
-    MinStack()
+    // 初始化空栈
+    Stack() : size_(100), top_(-1) {}
+
+    // 判断栈是否为空
+    [[nodiscard("no discard")]] int is_empty() const
     {
-        min_stack_.push(INT_MAX);
+        return this->top_ == -1;
+    }
+
+    // 判断栈是否已满
+    [[nodiscard("no discard")]] int is_full() const
+    {
+        return this->top_ + 1 == this->size_;
     }
 
     // 入栈操作
-    void push(int val)
+    void push(T value)
     {
-        val_stack_.push(val);
-        min_stack_.push(std::min(min_stack_.top(), val));
+        if (this->is_full())
+        {
+            std::cerr << "Error: Stack is full" << std::endl;
+            exit(-1);
+        }
+        else
+        {
+            this->Stack_.push_back(value);
+            this->top_ += 1;
+        }
     }
 
     // 出栈操作
     void pop()
     {
-        val_stack_.pop();
-        min_stack_.pop();
+        if (this->is_empty())
+        {
+            std::cerr << "Error: Stack is empty" << std::endl;
+            exit(-1);
+        }
+        else
+        {
+            this->Stack_.pop_back();
+            this->top_ -= 1;
+        }
     }
 
     // 获取栈顶元素
-    int top()
+    [[nodiscard("no discard")]] T peek() const
     {
-        return val_stack_.top();
-    }
-
-    // 获取最小元素
-    int getMin()
-    {
-        return min_stack_.top();
+        if (this->is_full())
+        {
+            std::cerr << "Error: Stack is full" << std::endl;
+            exit(-1);
+        }
+        else
+        {
+            return this->Stack_[this->top_];
+        }
     }
 };
+
+int Solution(const std::string &str)
+{
+    char op = '+';
+    int index = 0;
+    auto *stack = new Stack<int>();
+
+    while (index < str.size())
+    {
+        if (str[index] == ' ')
+        {
+            index += 1;
+            continue;
+        }
+
+        int num = str[index] - '0';
+        if (std::isdigit(str[index]))
+        {
+            while (index + 1 < str.size() && std::isdigit(str[index + 1]))
+            {
+                num = 10 * num + str[index + 1] - '0';
+                index += 1;
+            }
+
+            if (op == '+')
+            {
+                stack->push(num);
+            }
+            else if (op == '-')
+            {
+                stack->push(-num);
+            }
+            else if (!stack->is_empty() && op == '*')
+            {
+                int top = stack->peek();
+                stack->pop();
+                stack->push(top * num);
+            }
+            else if (!stack->is_empty() && op == '/')
+            {
+                int top = stack->peek();
+                stack->pop();
+                stack->push(top / num);
+            }
+        }
+
+        if (str[index] == '+' || str[index] == '-' || str[index] == '*' || str[index] == '/')
+        {
+            op = str[index];
+        }
+        index += 1;
+    }
+
+    int sum = 0;
+    while (!stack->is_empty())
+    {
+        sum += stack->peek();
+        stack->pop();
+    }
+
+    return sum;
+}
 
 int main(int argc, char *argv[])
 {
 
-    MinStack *minStack = new MinStack();
-    minStack->push(-2);
-    minStack->push(0);
-    minStack->push(-3);
-    std::cout << "Val: " << minStack->getMin() << std::endl;
-    minStack->pop();
-    std::cout << "Val: " << minStack->top() << std::endl;
-    std::cout << "Val: " << minStack->getMin() << std::endl;
+    std::string str = " 3+20*2 ";
+
+    int val = Solution(str);
+
+    std::cout << val << std::endl;
 
     return 0;
 }
